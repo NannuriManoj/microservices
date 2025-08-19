@@ -26,7 +26,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./user-service
-          push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/user-service:latest
 
       # 4. Build and push Task Service
@@ -34,7 +33,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./task-service
-          push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/task-service:latest
 
       # 5. Build and push Gateway Service
@@ -42,5 +40,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./gateway-service
-          push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/gateway-service:latest
